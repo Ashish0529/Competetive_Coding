@@ -4,12 +4,12 @@ using namespace std;
 
 char next_greater(char ar[],int n,int left,int right,char v){
 	char res;
-	while(left<=right){
+	while(left>=right){
 		int mid=left+(right-left)/2;
 		if(ar[mid]==v)
 			left=mid+1;
 		else if(ar[mid]<v)
-			left=mid+1;
+			left=mid-1;
 		else{
 			res=ar[mid];
 			right=mid-1;
