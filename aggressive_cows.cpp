@@ -1,13 +1,3 @@
-
-// Aggressive Cows(SPOJ)
-
-// Overview:- All the C cows must be placed in the N stalls
-// such that the minimum distance between any two of them
-// is as large as possible
-// Print the largest distance.
-
-// Time complexity:- O(nlogn)
-
 #include <bits/stdc++.h>
 #define ll long long int
 using namespace std;
@@ -16,7 +6,7 @@ bool isValid(ll arr[],int n,ll c,ll minDis){
 	ll count=1;ll last=arr[0];
 	for (int i = 0; i < n; ++i)
 	{
-		if(arr[i]-last<=minDis){
+		if(arr[i]-last>=minDis){
 			last=arr[i];
 			count++;
 		}
@@ -54,10 +44,10 @@ int main(){
 			ll mid=lowerbound+(upperbound-lowerbound)/2;
 			if(isValid(barns,n,k,mid)){
             result=mid;
-            lowerbound=mid-1;
+            lowerbound=mid+1;
 			}
 			else{
-				upperbound=mid+1;
+				upperbound=mid-1;
 			}
 		}
     cout<<"Max. of the min. distance between cows is :"<<result<<"\n";
