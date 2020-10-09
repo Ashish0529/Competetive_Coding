@@ -18,9 +18,9 @@ static ArrayList<Integer> index(int arr[][],int m,int n,int key){
 		 	return v;
 		 }
 		 else if(arr[i][j]>key)
-		 	j++;
+		 	j--;
 		 else
-		 	i--;
+		 	i++;
 	}
 	v.add(-1);
 	return v;
